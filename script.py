@@ -66,7 +66,7 @@ def post_new_ip_to_access_list(
         data=json.dumps(body),
     )
 
-    if result.status_code == 200:
+    if result.status_code == 201:
         return {"Success": f"""O ip {ip} foi adicionado com sucesso junto do comentario {comment}"""}
     else:
         return {"Error": result.text}
