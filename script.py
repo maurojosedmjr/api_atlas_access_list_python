@@ -82,7 +82,7 @@ whitelist = get_access_lists(PUBLIC_KEY, PRIVATE_KEY, PROJECT_ID_ATLAS)
 current_ip = check_current_public_ip()
 
 if "Success" in whitelist:
-    same_ip = True if current_ip in whitelist["Success"] else False
+    same_ip = True if current_ip in whitelist["Success"].keys() else False
 
 if not same_ip:
     result = post_new_ip_to_access_list(
